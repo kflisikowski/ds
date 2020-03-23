@@ -1,0 +1,272 @@
+---
+title: "Bivariate Analysis"
+author: "Karol Flisikowski"
+date: "3/23/2020"
+output:
+  html_document: 
+    df_print: kable
+    fig_caption: yes
+    highlight: monochrome
+    number_sections: yes
+    theme: spacelab
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+## Introduction
+
+This is our first lab when we are considering 2 dimensions and instead of calculating univariate statistics by groups (or factors) of other variable - we will measure their common relationships based on co-variance and correlation coefficients. 
+
+*Please be very careful when choosing the measure of correlation! In case of different measurument scales we have to recode one of the variables into weaker scale.
+
+It would be nice to add some additional plots in the background. Feel free to add your own sections and use external packages also.
+
+## Scatterplots
+
+```{r load-data, warning=TRUE, include=FALSE}
+library(haven)
+download.file("https://github.com/kflisikowski/ds/blob/master/bank_defaults.sav?raw=true", destfile ="bank_defaults.sav",mode="wb")
+bank_defaults <- read_sav("bank_defaults.sav")
+```
+
+First let's visualize our quantitative relationships using scatterplots. 
+
+```{r echo=FALSE, warning=TRUE}
+#install.packages("ggplot2", dependencies=TRUE)
+library(ggplot2)
+# Basic scatter plot
+ggplot(bank_defaults, aes(x=age, y=income)) + geom_point()
+# Change the point size, and shape
+ggplot(bank_defaults, aes(x=age, y=income)) +
+  geom_point(size=2, shape=23)
+```
+
+You can also transform the skewed distribution of incomes using log:
+
+```{r echo=FALSE, warning=TRUE}
+bank_defaults$log_income<-log(bank_defaults$income)
+# Basic scatter plot with the log of income
+ggplot(bank_defaults, aes(x=age, y=log_income)) + geom_point()
+```
+
+We can add an estimated linear regression line:
+
+```{r echo=FALSE, warning=TRUE}
+ggplot(bank_defaults, aes(x=age, y=log_income)) + 
+  geom_point(shape=18, color="blue")+
+  geom_smooth(method=lm,  linetype="dashed",
+             color="darkred", fill="blue")
+```
+
+## Scatterplots by groups 
+
+We can finally see if there any differences between risk status:
+
+```{r echo=FALSE, warning=TRUE}
+#install.packages('knitr')
+#Loading the libraries and datasets
+#install.packages('HSAUR3')
+#install.packages('tidyverse')
+#install.packages('dplyr')
+library(dplyr)
+library(tidyverse)
+library(HSAUR3)
+bank<-na.omit(bank_defaults)
+bank$def<-as.factor(bank$default)
+ggplot(data=bank, aes(x=age, y=log_income, color=def, shape=def)) + geom_point() + geom_smooth(method="lm") +
+labs(title="Income profiles by age vs. risk status",
+     x="Age",
+     y="Log of Income") 
+```
+
+We can also see more closely if there any differences between those two distributions adding their estimated density plots:
+
+```{r echo=FALSE, warning=TRUE}
+# scatter plot of x and y variables
+# color by groups
+scatterPlot <- ggplot(bank,aes(age, log_income, color=def)) + 
+  geom_point() + 
+  scale_color_manual(values = c('#999999','#E69F00')) + 
+  theme(legend.position=c(0,1), legend.justification=c(0,1))
+scatterPlot
+# Marginal density plot of age (top panel)
+agedensity <- ggplot(bank, aes(age, fill=def)) + 
+  geom_density(alpha=.5) + 
+  scale_fill_manual(values = c('#999999','#E69F00')) + 
+  theme(legend.position = "none")
+agedensity
+# Marginal density plot of y (right panel)
+incomedensity <- ggplot(bank, aes(income, fill=def)) + 
+  geom_density(alpha=.5) + 
+  scale_fill_manual(values = c('#999999','#E69F00')) + 
+  theme(legend.position = "none")
+incomedensity
+```
+
+We can also put those plots together:
+
+```{r echo=FALSE, warning=TRUE}
+#install.packages('knitr')
+#Loading the libraries and datasets
+#install.packages('HSAUR3')
+#install.packages('tidyverse')
+#install.packages('dplyr')
+library(dplyr)
+library(tidyverse)
+library(HSAUR3)
+bank<-na.omit(bank_defaults)
+bank$def<-as.factor(bank$default)
+ggplot(data=bank, aes(x=age, y=log_income, color=def, shape=def)) + geom_point() + geom_smooth(method="lm") +
+labs(title="Income profiles by age vs. risk status",
+     x="Age",
+     y="Log of Income") 
+```
+
+## Scatterplots with density curves 
+
+We can also see more closely if there any differences between those two distributions adding their estimated density plots:
+
+```{r echo=FALSE, warning=TRUE}
+#install.packages("gridExtra")
+library("gridExtra")
+# Create a blank placeholder plot:
+blankPlot <- ggplot()+geom_blank(aes(1,1))+
+  theme(plot.background = element_blank(), 
+   panel.grid.major = element_blank(),
+   panel.grid.minor = element_blank(), 
+   panel.border = element_blank(),
+   panel.background = element_blank(),
+   axis.title.x = element_blank(),
+   axis.title.y = element_blank(),
+   axis.text.x = element_blank(), 
+   axis.text.y = element_blank(),
+   axis.ticks = element_blank()
+     )
+grid.arrange(agedensity, blankPlot, scatterPlot, incomedensity, 
+        ncol=2, nrow=2, widths=c(4, 1.4), heights=c(1.4, 4))
+```
+
+## Correlation coefficients - Pearson's linear correlation
+
+Ok, let's move to some calculations.
+In R, we can use the cor() function. It takes three arguments and the method: cor(x, y, method)
+For 2 quantitative data, with all assumptions met, we can calculate simple Pearson's coefficient of linear correlation:
+
+```{r echo=FALSE, warning=TRUE}
+r<-cor(bank$log_income, bank$age, method = "pearson")
+r
+```
+
+Ok, what about the percentage of the explained variability?
+
+```{r echo=FALSE, warning=TRUE}
+r2<-r^2
+r2
+```
+So as we can see almost 33% of total log of incomes' variability is explained by differences in age. The rest (77%) is probably explained by other factors.
+
+## Rank correlation 
+
+For 2 different scales - like for example this pair of variables: income vs. education levels - we cannot use Pearson's coefficient. The only possibility is to rank also incomes... and lose some more detailed information about them. 
+
+First, let's see boxplots of income by education levels.
+
+```{r echo=FALSE, warning=TRUE}
+bank$educ<-as.factor(bank$ed)
+ggplot(data=bank, aes(x=educ, y=log_income, fill=def)) + 
+  geom_boxplot() +
+labs(title="Income profiles by education vs. risk status",
+     x="Education levels",
+     y="Income") 
+```
+
+Now, let's see Kendal's coefficient of rank correlation (robust for ties).
+
+```{r echo=FALSE, warning=TRUE}
+r_ken1<-cor(bank$income, bank$ed, method = "kendal")
+r_ken1
+```
+
+
+## Point-biserial correlation
+
+If you would like to compare 1 quantitative variable (income) and 1 dychotomous variable (default status - binary), then you can use point-biserial coefficient:
+
+```{r echo=FALSE, warning=FALSE}
+#install.packages("ltm")
+library(ltm)
+r_bin1<-biserial.cor(bank$income, bank$def)
+r_bin1
+```
+
+## Partial correlations
+Partial correlation holds constant one variable when computing the relations to others. Suppose we want to know the correlation between X and Y holding Z constant for both X and Y. That would be the partial correlation between X and Y controlling for Z. 
+
+Semipartial correlation holds Z constant for either X or Y, but not both, so if we wanted to control X for Z, we could compute the semipartial correlation between X and Y holding Z constant for X.
+
+Suppose we want to know the correlation between the log of income and age controlling for years of employment. How highly correlated are these after controlling for tenure? 
+
+*There can be more than one control variable.
+
+```{r echo=FALSE, warning=FALSE}
+#install.packages("ppcor")
+library(ppcor) # this pacakge computes partial and semipartial correlations.
+pcor.test(bank$log_income,bank$age,bank$employ)
+```
+
+
+## Nonlinear correlation - eta coefficient
+
+If you would like to check if there are any nonlinearities between variables, the only possibility (beside transformations and linear analysis) is to calculate "eta" coefficient and compare it with the Pearson's linear coefficient:
+
+```{r echo=FALSE, warning=FALSE}
+#install.packages("ryouready")
+library(ryouready)
+r_eta1<-eta(bank$income, bank$age)
+r_cor1<-cor(bank$income, bank$age)
+r_eta1 #eta coefficient
+r_cor1 #linear coefficient
+```
+
+## Correlation matrix
+
+We can also prepare the correlation matrix for all quantitative variables stored in our data frame. 
+We can use ggcorr() function:
+ggcorr(df, method = c("pairwise", "pearson"),
+  nbreaks = NULL, digits = 2, low = "#3B9AB2",
+  mid = "#EEEEEE", high = "#F21A00",
+  geom = "tile", label = FALSE,
+  label_alpha = FALSE)
+  
+```{r echo=FALSE, warning=TRUE}
+#install.packages("GGally")
+library(GGally)
+ggcorr(bank,
+    nbreaks = 6,
+    low = "steelblue",
+    mid = "white",
+    high = "darkred",
+    geom = "circle")
+```
+  
+As you can see - the default correlation matrix is not the best idea for all measurement scales (including binary variable "default"). 
+
+That's why now we can perform our bivariate analysis with ggpair with grouping.
+
+## Correlation matrix with scatterplots 
+
+Here is what we are about to calculate:
+- The correlation matrix between age, log_income, employ, address, debtinc, creddebt, and othdebt variable grouped by whether the person has a default status or not.
+- Plot the distribution of each variable by group
+- Display the scatter plot with the trend by group
+
+```{r echo=FALSE, warning=TRUE}
+ggpairs(bank, columns = c("age", "log_income", "employ", "address", "debtinc", "creddebt", "othdebt"), title = "Bivariate analysis of customers' risk characteristics", upper = list(continuous = wrap("cor",
+        size = 3)),
+    lower = list(continuous = wrap("smooth",
+        alpha = 0.3,
+        size = 0.1)),
+    mapping = aes(color = def))
+```
+
