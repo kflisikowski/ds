@@ -281,3 +281,62 @@ ggpairs(bank, columns = c("age", "log_income", "employ", "address", "debtinc", "
     mapping = aes(color = def))
 ```
 
+## Contingency tables - qualitative data
+
+Do you believe in the Afterlife?
+https://nationalpost.com/news/canada/millennials-do-you-believe-in-life-after-life
+A survey was conducted and a random sample of 1091 questionnaires is given in the form of the following contingency table:
+
+```{r echo=FALSE, warning=FALSE}
+x=c(435,147,375,134)
+dim(x)=c(2,2)
+dane<-as.table(x)
+dimnames(dane)=list(Gender=c('Female','Male'),Believe=c('Yes','No'))
+dane
+fourfoldplot(dane)
+```
+
+Our task is to check if there is a significant relationship between the belief in the afterlife and gender. We can perform this procedure with the simple chi-square statistics and chosen qualitative correlation coefficient (two-way 2x2 table).
+
+```{r echo=FALSE, warning=FALSE}
+#install.packages("psych")
+library(psych)
+yes<-c(435,147)
+no<-c(375,134)
+#cohen.kappa(cbind(yes,no))
+chisq.test(dane)
+prop.table(dane)
+```
+
+As you can see we can calculate our chi-square statistic really quickly for two-way tables or larger. 
+Now we can standardize this contingency measure to see if the relationship is significant.
+
+```{r echo=FALSE, warning=FALSE}
+library(DescTools)
+Phi(dane)
+#?ContCoef
+#ContCoef(dane)
+#CramerV(dane)
+#TschuprowT(dane)
+mosaicplot(dane)
+barplot(dane)
+```
+
+
+## Exercise 1. Bivariate analysis for the 'Titanic' data.
+
+Let's consider the titanic dataset which contains a complete list of passengers and crew members on the RMS Titanic. It includes a variable indicating whether a person did survive the sinking of the RMS Titanic on April 15, 1912.
+A data frame contains 2456 observations on 14 variables.
+
+```{r load-data2, warning=TRUE, include=FALSE}
+library(haven)
+download.file("https://github.com/kflisikowski/ds/blob/master/titanic.csv?raw=true", destfile ="titanic.csv",mode="wb")
+titanic <- read.csv("titanic.csv",row.names=1,sep=";")
+```
+
+The website http://www.encyclopedia-titanica.org/ offers detailed information about passengers and crew members on the RMS Titanic. According to the website 1317 passengers and 890 crew member were aboard.
+
+8 musicians and 9 employees of the shipyard company are listed as passengers, but travelled with a free ticket, which is why they have NA values in fare. In addition to that, fare is truely missing for a few regular passengers. 
+
+
+
