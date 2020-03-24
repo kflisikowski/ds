@@ -164,7 +164,7 @@ Ok, what about the percentage of the explained variability?
 r2<-r^2
 r2
 ```
-So as we can see almost 33% of total log of incomes' variability is explained by differences in age. The rest (77%) is probably explained by other factors.
+So as we can see almost 33% of total log of incomes' variability is explained by differences in age. The rest (67%) is probably explained by other factors.
 
 ## Rank correlation 
 
@@ -191,12 +191,21 @@ r_ken1
 
 ## Point-biserial correlation
 
+Let's try to verify if there is a significant relationship between incomes and risk status. First, let's take a look at the boxplot:
+
+```{r echo=FALSE, warning=TRUE}
+ggplot(data=bank, aes(x=def, y=log_income)) + 
+  geom_boxplot() +
+labs(title="Income profiles vs. risk status",
+     x="Risk status (default)",
+     y="Income") 
+```
 If you would like to compare 1 quantitative variable (income) and 1 dychotomous variable (default status - binary), then you can use point-biserial coefficient:
 
 ```{r echo=FALSE, warning=FALSE}
 #install.packages("ltm")
 library(ltm)
-r_bin1<-biserial.cor(bank$income, bank$def)
+r_bin1<-biserial.cor(bank$log_income, bank$def)
 r_bin1
 ```
 
@@ -218,7 +227,7 @@ pcor.test(bank$log_income,bank$age,bank$employ)
 
 ## Nonlinear correlation - eta coefficient
 
-If you would like to check if there are any nonlinearities between variables, the only possibility (beside transformations and linear analysis) is to calculate "eta" coefficient and compare it with the Pearson's linear coefficient:
+If you would like to check if there are any nonlinearities between 2 variables, the only possibility (beside transformations and linear analysis) is to calculate "eta" coefficient and compare it with the Pearson's linear coefficient. 
 
 ```{r echo=FALSE, warning=FALSE}
 #install.packages("ryouready")
@@ -227,6 +236,8 @@ r_eta1<-eta(bank$income, bank$age)
 r_cor1<-cor(bank$income, bank$age)
 r_eta1 #eta coefficient
 r_cor1 #linear coefficient
+difference<-(r_eta1)^2-(r_cor1)^2
+difference  #can you see a significant difference? >0.2?
 ```
 
 ## Correlation matrix
