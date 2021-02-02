@@ -1,0 +1,481 @@
+"przedmiot","student","quiz","punkty"
+"Statystyka","a","1",18
+"Statystyka","a","2",25
+"Statystyka","a","3",20
+"Statystyka","a","4",20
+"Statystyka","a","5",27
+"Statystyka","a","6",18
+"Statystyka","a","7",21
+"Statystyka","a","8",21
+"Statystyka","a","9",26
+"Statystyka","a","10",28
+"Statystyka","a","11",16
+"Statystyka","a","12",21
+"Statystyka","b","1",12
+"Statystyka","b","2",26
+"Statystyka","b","3",20
+"Statystyka","b","4",19
+"Statystyka","b","5",18
+"Statystyka","b","6",21
+"Statystyka","b","7",20
+"Statystyka","b","8",18
+"Statystyka","b","9",11
+"Statystyka","b","10",17
+"Statystyka","b","11",18
+"Statystyka","b","12",21
+"Statystyka","c","1",16
+"Statystyka","c","2",14
+"Statystyka","c","3",24
+"Statystyka","c","4",27
+"Statystyka","c","5",20
+"Statystyka","c","6",26
+"Statystyka","c","7",20
+"Statystyka","c","8",17
+"Statystyka","c","9",23
+"Statystyka","c","10",17
+"Statystyka","c","11",17
+"Statystyka","c","12",30
+"Statystyka","d","1",17
+"Statystyka","d","2",19
+"Statystyka","d","3",24
+"Statystyka","d","4",16
+"Statystyka","d","5",19
+"Statystyka","d","6",23
+"Statystyka","d","7",13
+"Statystyka","d","8",14
+"Statystyka","d","9",18
+"Statystyka","d","10",25
+"Statystyka","d","11",24
+"Statystyka","d","12",21
+"Statystyka","e","1",20
+"Statystyka","e","2",23
+"Statystyka","e","3",18
+"Statystyka","e","4",24
+"Statystyka","e","5",20
+"Statystyka","e","6",19
+"Statystyka","e","7",18
+"Statystyka","e","8",17
+"Statystyka","e","9",16
+"Statystyka","e","10",21
+"Statystyka","e","11",19
+"Statystyka","e","12",22
+"Statystyka","f","1",18
+"Statystyka","f","2",21
+"Statystyka","f","3",10
+"Statystyka","f","4",20
+"Statystyka","f","5",25
+"Statystyka","f","6",19
+"Statystyka","f","7",15
+"Statystyka","f","8",20
+"Statystyka","f","9",26
+"Statystyka","f","10",18
+"Statystyka","f","11",26
+"Statystyka","f","12",13
+"Statystyka","g","1",22
+"Statystyka","g","2",16
+"Statystyka","g","3",23
+"Statystyka","g","4",27
+"Statystyka","g","5",13
+"Statystyka","g","6",21
+"Statystyka","g","7",17
+"Statystyka","g","8",17
+"Statystyka","g","9",23
+"Statystyka","g","10",18
+"Statystyka","g","11",17
+"Statystyka","g","12",12
+"Statystyka","i","1",21
+"Statystyka","i","2",24
+"Statystyka","i","3",24
+"Statystyka","i","4",20
+"Statystyka","i","5",24
+"Statystyka","i","6",19
+"Statystyka","i","7",19
+"Statystyka","i","8",14
+"Statystyka","i","9",17
+"Statystyka","i","10",21
+"Statystyka","i","11",14
+"Statystyka","i","12",20
+"Statystyka","j","1",27
+"Statystyka","j","2",17
+"Statystyka","j","3",20
+"Statystyka","j","4",22
+"Statystyka","j","5",20
+"Statystyka","j","6",13
+"Statystyka","j","7",15
+"Statystyka","j","8",18
+"Statystyka","j","9",21
+"Statystyka","j","10",25
+"Statystyka","j","11",15
+"Statystyka","j","12",19
+"Statystyka","k","1",21
+"Statystyka","k","2",19
+"Statystyka","k","3",19
+"Statystyka","k","4",16
+"Statystyka","k","5",17
+"Statystyka","k","6",18
+"Statystyka","k","7",19
+"Statystyka","k","8",22
+"Statystyka","k","9",20
+"Statystyka","k","10",21
+"Statystyka","k","11",26
+"Statystyka","k","12",20
+"Matematyka","a","1",26
+"Matematyka","a","2",18
+"Matematyka","a","3",21
+"Matematyka","a","4",16
+"Matematyka","a","5",13
+"Matematyka","a","6",18
+"Matematyka","a","7",21
+"Matematyka","a","8",25
+"Matematyka","a","9",23
+"Matematyka","a","10",19
+"Matematyka","a","11",21
+"Matematyka","a","12",10
+"Matematyka","b","1",26
+"Matematyka","b","2",23
+"Matematyka","b","3",23
+"Matematyka","b","4",20
+"Matematyka","b","5",20
+"Matematyka","b","6",19
+"Matematyka","b","7",16
+"Matematyka","b","8",21
+"Matematyka","b","9",22
+"Matematyka","b","10",17
+"Matematyka","b","11",18
+"Matematyka","b","12",20
+"Matematyka","c","1",16
+"Matematyka","c","2",22
+"Matematyka","c","3",22
+"Matematyka","c","4",25
+"Matematyka","c","5",12
+"Matematyka","c","6",15
+"Matematyka","c","7",22
+"Matematyka","c","8",26
+"Matematyka","c","9",14
+"Matematyka","c","10",15
+"Matematyka","c","11",17
+"Matematyka","c","12",21
+"Matematyka","d","1",26
+"Matematyka","d","2",22
+"Matematyka","d","3",17
+"Matematyka","d","4",17
+"Matematyka","d","5",18
+"Matematyka","d","6",25
+"Matematyka","d","7",17
+"Matematyka","d","8",19
+"Matematyka","d","9",17
+"Matematyka","d","10",16
+"Matematyka","d","11",17
+"Matematyka","d","12",27
+"Matematyka","e","1",26
+"Matematyka","e","2",27
+"Matematyka","e","3",26
+"Matematyka","e","4",12
+"Matematyka","e","5",20
+"Matematyka","e","6",24
+"Matematyka","e","7",21
+"Matematyka","e","8",18
+"Matematyka","e","9",15
+"Matematyka","e","10",24
+"Matematyka","e","11",14
+"Matematyka","e","12",25
+"Matematyka","f","1",25
+"Matematyka","f","2",16
+"Matematyka","f","3",17
+"Matematyka","f","4",19
+"Matematyka","f","5",19
+"Matematyka","f","6",18
+"Matematyka","f","7",18
+"Matematyka","f","8",21
+"Matematyka","f","9",17
+"Matematyka","f","10",28
+"Matematyka","f","11",24
+"Matematyka","f","12",21
+"Matematyka","g","1",13
+"Matematyka","g","2",15
+"Matematyka","g","3",21
+"Matematyka","g","4",12
+"Matematyka","g","5",22
+"Matematyka","g","6",21
+"Matematyka","g","7",16
+"Matematyka","g","8",23
+"Matematyka","g","9",19
+"Matematyka","g","10",19
+"Matematyka","g","11",15
+"Matematyka","g","12",18
+"Matematyka","i","1",18
+"Matematyka","i","2",21
+"Matematyka","i","3",14
+"Matematyka","i","4",15
+"Matematyka","i","5",19
+"Matematyka","i","6",16
+"Matematyka","i","7",23
+"Matematyka","i","8",18
+"Matematyka","i","9",19
+"Matematyka","i","10",21
+"Matematyka","i","11",15
+"Matematyka","i","12",27
+"Matematyka","j","1",22
+"Matematyka","j","2",21
+"Matematyka","j","3",19
+"Matematyka","j","4",19
+"Matematyka","j","5",20
+"Matematyka","j","6",19
+"Matematyka","j","7",20
+"Matematyka","j","8",19
+"Matematyka","j","9",18
+"Matematyka","j","10",14
+"Matematyka","j","11",12
+"Matematyka","j","12",18
+"Matematyka","k","1",20
+"Matematyka","k","2",18
+"Matematyka","k","3",15
+"Matematyka","k","4",19
+"Matematyka","k","5",18
+"Matematyka","k","6",20
+"Matematyka","k","7",23
+"Matematyka","k","8",25
+"Matematyka","k","9",24
+"Matematyka","k","10",25
+"Matematyka","k","11",11
+"Matematyka","k","12",19
+"Data Mining","a","1",19
+"Data Mining","a","2",19
+"Data Mining","a","3",12
+"Data Mining","a","4",25
+"Data Mining","a","5",16
+"Data Mining","a","6",17
+"Data Mining","a","7",18
+"Data Mining","a","8",24
+"Data Mining","a","9",18
+"Data Mining","a","10",23
+"Data Mining","a","11",22
+"Data Mining","a","12",14
+"Data Mining","b","1",26
+"Data Mining","b","2",24
+"Data Mining","b","3",17
+"Data Mining","b","4",16
+"Data Mining","b","5",15
+"Data Mining","b","6",23
+"Data Mining","b","7",21
+"Data Mining","b","8",25
+"Data Mining","b","9",25
+"Data Mining","b","10",18
+"Data Mining","b","11",18
+"Data Mining","b","12",19
+"Data Mining","c","1",25
+"Data Mining","c","2",17
+"Data Mining","c","3",23
+"Data Mining","c","4",25
+"Data Mining","c","5",28
+"Data Mining","c","6",11
+"Data Mining","c","7",18
+"Data Mining","c","8",10
+"Data Mining","c","9",21
+"Data Mining","c","10",18
+"Data Mining","c","11",23
+"Data Mining","c","12",20
+"Data Mining","d","1",20
+"Data Mining","d","2",20
+"Data Mining","d","3",18
+"Data Mining","d","4",19
+"Data Mining","d","5",22
+"Data Mining","d","6",13
+"Data Mining","d","7",27
+"Data Mining","d","8",19
+"Data Mining","d","9",14
+"Data Mining","d","10",21
+"Data Mining","d","11",17
+"Data Mining","d","12",10
+"Data Mining","e","1",15
+"Data Mining","e","2",25
+"Data Mining","e","3",11
+"Data Mining","e","4",24
+"Data Mining","e","5",26
+"Data Mining","e","6",19
+"Data Mining","e","7",20
+"Data Mining","e","8",20
+"Data Mining","e","9",17
+"Data Mining","e","10",19
+"Data Mining","e","11",20
+"Data Mining","e","12",17
+"Data Mining","f","1",16
+"Data Mining","f","2",22
+"Data Mining","f","3",21
+"Data Mining","f","4",20
+"Data Mining","f","5",20
+"Data Mining","f","6",23
+"Data Mining","f","7",19
+"Data Mining","f","8",12
+"Data Mining","f","9",21
+"Data Mining","f","10",11
+"Data Mining","f","11",23
+"Data Mining","f","12",18
+"Data Mining","g","1",17
+"Data Mining","g","2",17
+"Data Mining","g","3",20
+"Data Mining","g","4",19
+"Data Mining","g","5",21
+"Data Mining","g","6",15
+"Data Mining","g","7",22
+"Data Mining","g","8",17
+"Data Mining","g","9",19
+"Data Mining","g","10",19
+"Data Mining","g","11",24
+"Data Mining","g","12",21
+"Data Mining","i","1",14
+"Data Mining","i","2",24
+"Data Mining","i","3",16
+"Data Mining","i","4",21
+"Data Mining","i","5",22
+"Data Mining","i","6",23
+"Data Mining","i","7",18
+"Data Mining","i","8",20
+"Data Mining","i","9",20
+"Data Mining","i","10",21
+"Data Mining","i","11",19
+"Data Mining","i","12",18
+"Data Mining","j","1",20
+"Data Mining","j","2",25
+"Data Mining","j","3",22
+"Data Mining","j","4",22
+"Data Mining","j","5",14
+"Data Mining","j","6",18
+"Data Mining","j","7",14
+"Data Mining","j","8",19
+"Data Mining","j","9",16
+"Data Mining","j","10",21
+"Data Mining","j","11",27
+"Data Mining","j","12",14
+"Data Mining","k","1",24
+"Data Mining","k","2",18
+"Data Mining","k","3",22
+"Data Mining","k","4",14
+"Data Mining","k","5",18
+"Data Mining","k","6",17
+"Data Mining","k","7",21
+"Data Mining","k","8",21
+"Data Mining","k","9",25
+"Data Mining","k","10",23
+"Data Mining","k","11",19
+"Data Mining","k","12",23
+"Analiza danych","a","1",18
+"Analiza danych","a","2",21
+"Analiza danych","a","3",16
+"Analiza danych","a","4",11
+"Analiza danych","a","5",22
+"Analiza danych","a","6",22
+"Analiza danych","a","7",18
+"Analiza danych","a","8",15
+"Analiza danych","a","9",19
+"Analiza danych","a","10",23
+"Analiza danych","a","11",26
+"Analiza danych","a","12",18
+"Analiza danych","b","1",19
+"Analiza danych","b","2",16
+"Analiza danych","b","3",20
+"Analiza danych","b","4",23
+"Analiza danych","b","5",17
+"Analiza danych","b","6",16
+"Analiza danych","b","7",18
+"Analiza danych","b","8",18
+"Analiza danych","b","9",21
+"Analiza danych","b","10",22
+"Analiza danych","b","11",17
+"Analiza danych","b","12",20
+"Analiza danych","c","1",23
+"Analiza danych","c","2",13
+"Analiza danych","c","3",17
+"Analiza danych","c","4",20
+"Analiza danych","c","5",19
+"Analiza danych","c","6",23
+"Analiza danych","c","7",25
+"Analiza danych","c","8",17
+"Analiza danych","c","9",17
+"Analiza danych","c","10",17
+"Analiza danych","c","11",17
+"Analiza danych","c","12",25
+"Analiza danych","d","1",22
+"Analiza danych","d","2",24
+"Analiza danych","d","3",23
+"Analiza danych","d","4",16
+"Analiza danych","d","5",19
+"Analiza danych","d","6",20
+"Analiza danych","d","7",16
+"Analiza danych","d","8",25
+"Analiza danych","d","9",21
+"Analiza danych","d","10",24
+"Analiza danych","d","11",17
+"Analiza danych","d","12",20
+"Analiza danych","e","1",18
+"Analiza danych","e","2",20
+"Analiza danych","e","3",19
+"Analiza danych","e","4",17
+"Analiza danych","e","5",25
+"Analiza danych","e","6",21
+"Analiza danych","e","7",19
+"Analiza danych","e","8",22
+"Analiza danych","e","9",17
+"Analiza danych","e","10",20
+"Analiza danych","e","11",19
+"Analiza danych","e","12",19
+"Analiza danych","f","1",17
+"Analiza danych","f","2",20
+"Analiza danych","f","3",14
+"Analiza danych","f","4",15
+"Analiza danych","f","5",18
+"Analiza danych","f","6",18
+"Analiza danych","f","7",18
+"Analiza danych","f","8",13
+"Analiza danych","f","9",22
+"Analiza danych","f","10",15
+"Analiza danych","f","11",21
+"Analiza danych","f","12",26
+"Analiza danych","g","1",18
+"Analiza danych","g","2",21
+"Analiza danych","g","3",21
+"Analiza danych","g","4",25
+"Analiza danych","g","5",23
+"Analiza danych","g","6",24
+"Analiza danych","g","7",23
+"Analiza danych","g","8",19
+"Analiza danych","g","9",25
+"Analiza danych","g","10",21
+"Analiza danych","g","11",15
+"Analiza danych","g","12",22
+"Analiza danych","i","1",22
+"Analiza danych","i","2",21
+"Analiza danych","i","3",20
+"Analiza danych","i","4",23
+"Analiza danych","i","5",21
+"Analiza danych","i","6",20
+"Analiza danych","i","7",20
+"Analiza danych","i","8",14
+"Analiza danych","i","9",16
+"Analiza danych","i","10",20
+"Analiza danych","i","11",18
+"Analiza danych","i","12",14
+"Analiza danych","j","1",19
+"Analiza danych","j","2",16
+"Analiza danych","j","3",16
+"Analiza danych","j","4",18
+"Analiza danych","j","5",14
+"Analiza danych","j","6",16
+"Analiza danych","j","7",17
+"Analiza danych","j","8",22
+"Analiza danych","j","9",22
+"Analiza danych","j","10",22
+"Analiza danych","j","11",17
+"Analiza danych","j","12",18
+"Analiza danych","k","1",16
+"Analiza danych","k","2",13
+"Analiza danych","k","3",13
+"Analiza danych","k","4",27
+"Analiza danych","k","5",14
+"Analiza danych","k","6",26
+"Analiza danych","k","7",21
+"Analiza danych","k","8",24
+"Analiza danych","k","9",25
+"Analiza danych","k","10",20
+"Analiza danych","k","11",17
+"Analiza danych","k","12",25
