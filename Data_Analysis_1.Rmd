@@ -1,0 +1,136 @@
+---
+title: 'Descriptive Statistics'
+subtitle: 'Tables & Charts'
+author: "Karol Flisikowski"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::downcute:
+    self_contained: true
+    thumbnails: false
+    lightbox: true
+    gallery: true
+    highlight: pygments
+---
+
+```{r setup, include=FALSE}
+## Global options
+knitr::opts_chunk$set(echo = TRUE)
+options(qwraps2_markup = "markdown")
+download.file("https://github.com/kflisikowski/ds/blob/master/computers.csv?raw=true", destfile ="computers.csv",mode="wb")
+computers <- read.csv("computers.csv",row.names=1)
+library(qwraps2)
+library(arsenal)
+library(e1071)
+library(haven)
+library(papeR)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(kableExtra)
+library(summarytools)
+library(classInt)
+library(pastecs)
+library(reporttools)
+library(desctable)
+library(frequency)
+library(ggpubr)
+```
+
+## Computers
+
+Research Question: We want to investigate if the price of 'premium' computers is significantly different from not 'premium' ones. What are the typical properties of both groups? 
+
+
+## Data wrangling
+
+As you can see not all formats of our variables are adjusted. We need to prepare the appropriate formats of our variables according to their measurement scales and future usage.
+
+```{r wrangling, include=TRUE}
+
+```
+
+Do not forget to attach the data so that it is simpler to call the variables and not using "data set + \$ + variable".
+
+It would be nice to start without any outliers and NA's. Let's solve this problem with the "dlookr" package:
+
+```{r message=FALSE, warning=FALSE}
+
+```
+
+## Frequency Table and TAI
+
+In the first stage of our analysis we are going to group our data in the form of the simple frequency table.
+
+First, let's take a look at the distribution of prices in our sample and verify the tabular accuracy using TAI measure:
+
+```{r table, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+
+
+```
+
+Let's calculate TAI index to check the properties of the tabulated data.
+
+```{r tai, echo=FALSE}
+
+```
+
+As we can see - TAI index...
+
+
+## Contingency tables
+
+Now, let's take a look at the categorical data and make some cross-tabulations. 
+
+```{r crosstabs, echo=FALSE}
+
+```
+
+
+## Basic plots
+
+In this section we should present our data using basic (pre-installed with R) graphics. Choose the most appropriate plots according to the scale of chosen variables. Investigate the heterogeneity of the distribution presenting data by groups (i.e. by cd, multi, premium type etc.). Do not forget about main titles, labels and legend. Read more about graphical parameters [here](http://www.sthda.com/english/wiki/graphical-parameters).
+
+```{r histogram, echo=FALSE}
+# Applying Freedman/Diaconis rule p.120 ("Algorithm that chooses bin widths and locations automatically, based on the sample size and the spread of the data" http://www.mathworks.com/help/toolbox/stats/bqucg6n.html)
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r boxplot, echo=FALSE}
+
+```
+
+
+We can also plot qualitative data only, presenting the frequencies from the contingency tables using ... plots. 
+
+```{r qualitative, echo=FALSE}
+
+```
+
+
+## ggplot2 plots
+
+In this section we will present the same plots but with the use of ***ggplot2*** and ***ggpubr*** packages.
+
+```{r histogram2, echo=FALSE}
+
+```
+
+Ggplot2 allows to show the average value of each group using the **stat_summary()** function. No more need to calculate your mean values before plotting!
+
+```{r boxplot2, echo=FALSE}
+
+
+```
+
+## Using facets
+
+Faceting generates small multiples each showing a different subset of the data. Small multiples are a powerful tool for exploratory data analysis: you can rapidly compare patterns in different parts of the data and see whether they are the same or different. Read more about facets [here](https://ggplot2-book.org/facet.html).
+
+```{r facet1, echo=FALSE}
+
+
+```
+
