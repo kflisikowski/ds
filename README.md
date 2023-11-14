@@ -1,5 +1,5 @@
 # ds
-Descriptive Statistics 2021 - Data Engineering 
+Descriptive Statistics 2023/2024 - Data Engineering 
 Gdansk University of Technology
 Karol Flisikowski 
 
