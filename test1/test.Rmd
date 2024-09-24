@@ -1,0 +1,79 @@
+---
+title: "Chained setup chunks"
+author: "Karol Flisikowski"
+output: 
+  learnr::tutorial:
+  progressive: true
+  allow_skip: true
+  df_print: default
+runtime: shiny_prerendered
+---
+
+```{r setup, include = FALSE}
+library(learnr)
+library(reticulate)
+# Reticulate setup for Python
+virtualenv_dir = Sys.getenv('VIRTUALENV_NAME')
+python_path = Sys.getenv('PYTHON_PATH')
+reticulate::virtualenv_create(envname = 'python3_env', 
+                              python = '/usr/bin/python3')
+
+reticulate::virtualenv_install('python3_env', 
+                               packages = c('numpy','pandas','scipy'))  # <- Add other packages here, if needed
+reticulate::use_virtualenv('python3_env', required = T)
+
+library(learnr)
+library(reticulate)
+```
+
+```{r even_more_setup}
+d <- 3
+```
+
+# learnr + reticulate demo
+
+<!-- Create Python variable `a` which reads `d` from R: -->
+
+```{python setupA, exercise.setup = "even_more_setup"}
+a = r.d + 2 # 5
+```
+
+<!-- Read `a` from Python, and create `b`: -->
+
+```{r setupB, exercise.setup = "setupA"}
+b <- py$a + d # 8
+```
+
+R exercise that uses `b` (via R and python setup chunks):
+
+```{r ex1, exercise = TRUE, exercise.setup = "setupB"}
+b + 1 # 9
+```
+
+Python exercise using `b` (via R and python setup chunks):
+
+```{python ex2, exercise = TRUE, exercise.setup = "setupB"}
+r.b + 1 # 9
+```
+
+# testy
+
+<!-- Create Python data: -->
+
+```{python setupAA}
+# Import necessary libraries
+import numpy as np
+from scipy import stats
+# Hypothesized population mean
+mu = 70
+```
+
+Perform 2 sample t-test using scipy stats library:
+
+```{python ex3, exercise = TRUE, exercise.setup = "setupAA"}
+# Given student scores:
+student_scores = np.array([72, 89, 65, 73, 79, 84, 63, 76, 85, 75])
+student_scores2 = np.array([2, 89, 65, 3, 79, 4, 3, 76, 85, 75])
+# stats.ttest_ind
+# your turn
+```
